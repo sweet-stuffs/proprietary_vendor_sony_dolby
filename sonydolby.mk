@@ -12,6 +12,9 @@ DOLBY_PATH := vendor/sony/dolby
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/configs/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
 
+# Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DOLBY_PATH)/sepolicy/vendor
+
 # Properties
 TARGET_VENDOR_PROP += $(DOLBY_PATH)/vendor.prop
 
