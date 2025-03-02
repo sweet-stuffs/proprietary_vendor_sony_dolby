@@ -16,6 +16,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     DolbyAtmos
 
+# Overlay-RRO
+PRODUCT_PACKAGES += \
+    SonyDolbyResCommon
+
 # Sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DOLBY_PATH)/sepolicy/vendor
 
