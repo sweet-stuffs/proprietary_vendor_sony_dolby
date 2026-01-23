@@ -12,6 +12,10 @@ DOLBY_PATH := vendor/sony/dolby
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/configs/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
 
+# DolbyAtmos
+PRODUCT_PACKAGES += \
+    DolbyAtmos
+
 # Sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DOLBY_PATH)/sepolicy/vendor
 
