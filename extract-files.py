@@ -21,9 +21,19 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libcodec2_soft_dolby.so',
         'vendor/lib64/libdlbdsservice.so',
         'vendor/lib64/libdlbpreg.so',
-        'vendor/lib64/soundfx/libdlbvol.so',
-        'vendor/lib64/soundfx/libswdap.so'
+        'vendor/lib64/soundfx/libdlbvol.so'
     ): blob_fixup().replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    # < 00146c60: 1f00 0071 e003 0091 f317 9f1a 4162 0494  ...q........Ab..
+    # < 00146d80: 0900 0012 8902 090b 3f01 086b ca01 0054  ........?..k...T
+    # ---
+    # > 00146c60: 1f00 0071 e003 0091 1300 8052 4162 0494  ...q.......RAb..
+    # > 00146d80: 0900 0012 8902 090b 3f01 086b 0e00 0014  ........?..k....
+  'vendor/lib64/soundfx/libswdap.so': blob_fixup()
+    .binary_regex_replace(b'\x1f\x00\x00\x71\xe0\x03\x00\x91\xf3\x17\x9f\x1a\x41\x62\x04\x94',
+                          b'\x1f\x00\x00\x71\xe0\x03\x00\x91\x13\x00\x80\x52\x41\x62\x04\x94')
+    .binary_regex_replace(rb'\x09\x00\x00\x12\x89\x02\x09\x0b\x3f\x01\x08\x6b\xca\x01\x00\x54',
+                          b'\x09\x00\x00\x12\x89\x02\x09\x0b\x3f\x01\x08\x6b\x0e\x00\x00\x14')
+    .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
