@@ -1,6 +1,8 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
 ## are from Sony Xperia 1V(pdx234) XQ-DQ72_Customized-SEA_67.2.A.3.141
 
+# libswdap are pinned from XQ-DQ72_Customized-SEA_67.2.A.3.141
+
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/bin/hw/vendor.dolby.media.c2@1.0-service
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
@@ -11,7 +13,7 @@ vendor/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml
 vendor/lib/libdapparamstorage.so
 vendor/lib/libdlbpreg.so
 vendor/lib/soundfx/libdlbvol.so
-vendor/lib/soundfx/libswdap.so
+vendor/lib/soundfx/libswdap.so|aedcc8cade96ba9d7a8b4f633f001a6976b23510|0dded004fcf5295786d5ea7a274446d4f6634722
 vendor/lib/soundfx/libswgamedap.so
 vendor/lib/soundfx/libswvqe.so
 vendor/lib/vendor.dolby.hardware.dms@2.0.so
@@ -24,7 +26,7 @@ vendor/lib64/libdeccfg.so
 vendor/lib64/libdlbdsservice.so
 vendor/lib64/libdlbpreg.so
 vendor/lib64/soundfx/libdlbvol.so
-vendor/lib64/soundfx/libswdap.so
+vendor/lib64/soundfx/libswdap.so|27cb4402bad389287b0b114398d66c96b9b17e49|b773c09b7d19146d4109428cf6ba6a7a0ca61622
 vendor/lib64/soundfx/libswgamedap.so
 vendor/lib64/soundfx/libswvqe.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
