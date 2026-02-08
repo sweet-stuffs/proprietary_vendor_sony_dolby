@@ -12,9 +12,8 @@ DOLBY_PATH := vendor/sony/dolby
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/configs/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
 
-# DolbyAtmos
-PRODUCT_PACKAGES += \
-    DolbyAtmos
+# LunarisDolby
+$(call inherit-product, packages/apps/LunarisDolby/lunarisdolby.mk)
 
 # Overlay-RRO
 PRODUCT_PACKAGES += \
